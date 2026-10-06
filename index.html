@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="Aurelia — Personal AI Job Hunting Assistant proof of concept" />
+  <title>Aurelia · Personal AI Job Hunting Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand-block">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div>
+          <div class="brand-name">aurelia</div>
+          <div class="brand-caption">job search control room</div>
+        </div>
+      </div>
+
+      <div class="workspace-switcher" data-action="open-candidate-switcher" role="button" tabindex="0" title="Switch demo candidate">
+        <div class="workspace-avatar" id="workspace-initials">AR</div>
+        <div class="workspace-copy">
+          <strong id="workspace-name">Aman Reddy</strong>
+          <span id="workspace-role">Demo candidate · network automation</span>
+        </div>
+        <span class="chevron">⌄</span>
+      </div>
+
+      <div class="nav-label">Workspace</div>
+      <nav class="primary-nav">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon" data-icon="grid"></span><span>Command center</span><span class="nav-count">01</span></button>
+        <button class="nav-item" data-view="opportunities"><span class="nav-icon" data-icon="briefcase"></span><span>Opportunities</span><span class="nav-count">12</span></button>
+        <button class="nav-item" data-view="reviews"><span class="nav-icon" data-icon="inbox"></span><span>Review queue</span><span class="nav-count attention">05</span></button>
+        <button class="nav-item" data-view="resumes"><span class="nav-icon" data-icon="file"></span><span>Resumes & evidence</span></button>
+        <button class="nav-item" data-view="applications"><span class="nav-icon" data-icon="send"></span><span>Applications</span></button>
+        <button class="nav-item" data-view="communications"><span class="nav-icon" data-icon="mail"></span><span>Communications</span><span class="nav-count">03</span></button>
+        <button class="nav-item" data-view="tracking"><span class="nav-icon" data-icon="sheet"></span><span>Tracking view</span></button>
+      </nav>
+
+      <div class="nav-label secondary-label">Governance</div>
+      <nav class="primary-nav">
+        <button class="nav-item" data-view="integrations"><span class="nav-icon" data-icon="layers"></span><span>Integrations & APIs</span></button>
+        <button class="nav-item" data-view="scenarios"><span class="nav-icon" data-icon="flask"></span><span>Demo lab</span><span class="nav-dot"></span></button>
+        <button class="nav-item" data-view="audit"><span class="nav-icon" data-icon="activity"></span><span>Audit log</span></button>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-footer">
+        <div class="secure-badge"><span class="status-dot green"></span><span>Local demo environment</span></div>
+        <div class="version-line"><span>POC v1.0</span><span>•</span><span>Oct 2026</span></div>
+      </div>
+    </aside>
+
+    <main class="main-shell">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><span class="crumb-slash">/</span><strong id="breadcrumb-current">Command center</strong></div>
+        <div class="topbar-actions">
+          <div class="global-search-wrap">
+            <span class="search-icon" data-icon="search"></span>
+            <input id="global-search" type="search" placeholder="Search jobs, companies, evidence…" autocomplete="off" />
+            <span class="search-shortcut">⌘ K</span>
+            <div id="global-search-results" class="search-results hidden"></div>
+          </div>
+          <div class="topbar-divider"></div>
+          <button class="icon-button" title="Notifications" aria-label="Notifications"><span data-icon="bell"></span><span class="notification-dot"></span></button>
+          <button class="avatar-button" title="Aman Reddy">AR</button>
+        </div>
+      </header>
+
+      <div class="outbound-banner" id="outbound-banner">
+        <div class="banner-left"><span class="banner-icon" data-icon="shield"></span><span><strong>Outbound protection is on.</strong> Applications and messages require recorded owner approval.</span></div>
+        <button class="text-button" data-action="open-controls">Review controls <span>→</span></button>
+      </div>
+
+      <div id="page-content" class="page-content"></div>
+    </main>
+  </div>
+
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+  <div id="modal-root"></div>
+  <script src="app.js"></script>
+</body>
+</html>
